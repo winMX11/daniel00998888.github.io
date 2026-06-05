@@ -1,1 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2125166334282472"
+     crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="PulsoMX">
+    <meta property="og:type" content="article">
+    <title id="page-title">Noticia | PulsoMX</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { --rojo: #c0152a; --rojo-oscuro: #8b0f1e; --amarillo: #f5b800; --gris: #f4f4f2; --texto: #1a1a2e; --texto-suave: #6b7280; }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+        body { font-family: 'Source Sans 3', sans-serif; background: var(--gris); color: var(--texto); min-width: 320px; overflow-x: hidden; }
+        img { max-width: 100%; height: auto; display: block; }
 
+        /* HEADER */
+        header { background: var(--rojo); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.3); }
+        .header-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 10px 16px; gap: 12px; }
+        .logo { font-family: 'Playfair Display', serif; font-size: clamp(1.2rem, 4vw, 1.8rem); font-weight: 900; color: white; text-decoration: none; white-space: nowrap; flex-shrink: 0; }
+        .logo span { color: var(--amarillo); }
+        .header-nav { display: flex; gap: 12px; flex-wrap: wrap; }
+        .header-nav a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: clamp(0.7rem, 2vw, 0.85rem); font-weight: 600; text-transform: uppercase; white-space: nowrap; }
+        .header-nav a:hover { color: var(--amarillo); }
+        @media (max-width: 480px) { .header-nav .hide-xs { display: none; } }
+
+        /* AD — desktop muestra 728, móvil muestra 320 */
+        .ad-top { text-align: center; padding: 8px; background: #f0f0f0; border-bottom: 1px solid #e0e0e0; overflow: hidden; }
+        .ad-728 { display: block; }
+        .ad-320 { display: none; }
+        @media (max-width: 767px) { .ad-728 { display: none; } .ad-320 { display: block; } }
+
+        /* LAYOUT */
+        .article-wrapper { max-width: 1200px; margin: 20px auto; padding: 0 16px; display: grid; grid-template-columns: 1fr 300px; gap: 24px; }
+        @media (max-width: 960px) { .article-wrapper { grid-template-columns: 1fr; } .sidebar { display: none; } }
+
+        /* BREADCRUMB */
+        .breadcrumb { font-size: 0.78rem; color: var(--texto-suave); margin-bottom: 14px; word-break: break-word; }
+        .breadcrumb a { color: var(--rojo); text-decoration: none; }
+
+        /* ARTICLE */
+        article { background: white; border-radius: 12px; padding: clamp(16px, 4vw, 32px); box-shadow: 0 2px 12px rgba(0,0,0,0.07); }
+        .article-tag { background: var(--rojo); color: white; font-size: 0.68rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 3px 10px; border-radius: 4px; display: inline-block; margin-bottom: 10px; }
+        #title { font-family: 'Playfair Display', serif; font-size: clamp(1.3rem, 4vw, 2rem); font-weight: 900; line-height: 1.2; margin-bottom: 12px; color: var(--texto); word-break: break-word; }
+        .article-meta { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-top: 1px solid #eee; border-bottom: 1px solid #eee; margin-bottom: 18px; font-size: clamp(0.72rem, 2vw, 0.82rem); color: var(--texto-suave); flex-wrap: wrap; }
+        .article-meta i { color: var(--rojo); }
+        #image { width: 100%; height: clamp(180px, 40vw, 380px); object-fit: cover; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+
+        /* AD dentro del artículo */
+        .ad-article { text-align: center; margin: 24px 0; overflow: hidden; }
+        .ad-article-native { margin: 24px 0; overflow: hidden; }
+        /* iframe nativo al 100% de ancho */
+        .ad-article-native iframe { width: 100% !important; max-width: 100%; height: 250px; border: none; }
+
+        #body { font-size: clamp(0.95rem, 2.5vw, 1.05rem); line-height: 1.85; color: #2d2d2d; word-break: break-word; }
+        #body p { margin-bottom: 16px; }
+
+        /* SOURCE */
+        .source-box { background: #f8f8f8; border-left: 4px solid var(--rojo); padding: 12px 16px; border-radius: 0 8px 8px 0; margin-top: 24px; font-size: 0.83rem; word-break: break-all; }
+        .source-box a { color: var(--rojo); font-weight: 700; }
+
+        /* SHARE */
+        .share-box { margin-top: 24px; padding-top: 18px; border-top: 1px solid #eee; }
+        .share-box p { font-weight: 700; font-size: 0.88rem; margin-bottom: 10px; }
+        .share-btns { display: flex; gap: 8px; flex-wrap: wrap; }
+        .share-btn { padding: 8px 14px; border-radius: 8px; font-weight: 700; font-size: 0.78rem; text-decoration: none; color: white; display: flex; align-items: center; gap: 6px; transition: opacity 0.2s; white-space: nowrap; }
+        .share-btn:hover { opacity: 0.85; }
+        .share-btn.wa { background: #25D366; }
+        .share-btn.tw { background: #1DA1F2; }
+        .share-btn.fb { background: #1877F2; }
+
+        /* RELATED */
+        .related-title { font-family: 'Playfair Display', serif; font-size: clamp(1rem, 3vw, 1.2rem); font-weight: 900; border-left: 4px solid var(--rojo); padding-left: 12px; margin: 28px 0 16px; text-transform: uppercase; }
+        .related-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 14px; }
+        @media (max-width: 480px) { .related-grid { grid-template-columns: 1fr; } }
+        .related-card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 1px 6px rgba(0,0,0,0.06); text-decoration: none; color: inherit; display: block; transition: transform 0.2s; }
+        .related-card:hover { transform: translateY(-2px); }
+        .related-card img { width: 100%; height: clamp(110px, 18vw, 140px); object-fit: cover; }
+        .related-card div { padding: 10px; }
+        .related-card h4 { font-family: 'Playfair Display', serif; font-size: clamp(0.8rem, 2vw, 0.9rem); font-weight: 700; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+
+        /* SIDEBAR */
+        .sidebar-widget { background: white; border-radius: 10px; padding: 16px; margin-bottom: 18px; box-shadow: 0 1px 6px rgba(0,0,0,0.06); }
+        .sidebar-title { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 900; border-bottom: 2px solid var(--rojo); padding-bottom: 8px; margin-bottom: 12px; text-transform: uppercase; }
+        .sidebar-news-item { display: flex; gap: 10px; align-items: flex-start; padding: 8px 0; border-bottom: 1px solid #f0f0f0; text-decoration: none; color: inherit; }
+        .sidebar-news-item:last-child { border-bottom: none; }
+        .sidebar-news-item img { width: 68px; height: 52px; object-fit: cover; border-radius: 6px; flex-shrink: 0; }
+        .sidebar-news-item h4 { font-size: 0.78rem; font-weight: 700; line-height: 1.35; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+        .sidebar-news-item span { font-size: 0.63rem; color: var(--rojo); font-weight: 700; display: block; margin-bottom: 2px; }
+        .ad-sidebar { text-align: center; overflow: hidden; margin-bottom: 18px; }
+
+        /* FOOTER */
+        footer { background: var(--texto); color: rgba(255,255,255,0.7); margin-top: 40px; padding: 24px 16px; text-align: center; font-size: clamp(0.72rem, 2vw, 0.8rem); }
+        footer a { color: var(--amarillo); text-decoration: none; }
+        .footer-links { display: flex; justify-content: center; gap: 14px; margin-bottom: 10px; flex-wrap: wrap; }
+
+        #loader { text-align: center; padding: 60px 16px; color: var(--texto-suave); }
+    </style>
+
+    <script src="https://alarmpenguinmelt.com/c9/7f/52/c97f52ee91d1bd3652fce5a2f49b61c5.js"></script>
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <a href="index.html" class="logo">⚡ PULSO<span>MX</span></a>
+            <nav class="header-nav">
+                <a href="index.html"><i class="fa-solid fa-arrow-left"></i> <span class="hide-xs">Inicio</span></a>
+                <a href="privacidad.html" class="hide-xs">Privacidad</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="ad-top">
+        <div class="ad-728">
+            <iframe sandbox="allow-scripts allow-popups allow-same-origin" width="728" height="90" frameborder="0" scrolling="no" srcdoc="<html><body><script>atOptions = {'key':'7f7f7c1f4dcc288bb79ea8e84f8e3cfa','format':'iframe','height':90,'width':728,'params':{}};</script><script src='https://alarmpenguinmelt.com/7f7f7c1f4dcc288bb79ea8e84f8e3cfa/invoke.js'></script></body></html>"></iframe>
+        </div>
+        <div class="ad-320">
+            <iframe sandbox="allow-scripts allow-popups allow-same-origin" width="320" height="50" frameborder="0" scrolling="no" srcdoc="<html><body><script>atOptions = {'key':'d4763e5f8fb679f246c0f6db1eebe973','format':'iframe','height':50,'width':320,'params':{}};</script><script src='https://alarmpenguinmelt.com/d4763e5f8fb679f246c0f6db1eebe973/invoke.js'></script></body></html>"></iframe>
+        </div>
+    </div>
+
+    <div id="loader">
+        <i class="fa-solid fa-spinner fa-spin" style="color:var(--rojo);font-size:2rem;"></i>
+        <p style="margin-top:12px;">Cargando noticia...</p>
+    </div>
+
+    <div id="article-wrapper" class="article-wrapper" style="display:none;">
+        <main>
+            <div class="breadcrumb">
+                <a href="index.html">Inicio</a> › <span id="breadcrumb-title">Noticia</span>
+            </div>
+
+            <article>
+                <span class="article-tag">Noticia</span>
+                <h1 id="title"></h1>
+                <div class="article-meta">
+                    <span><i class="fa-regular fa-calendar"></i> <span id="date"></span></span>
+                    <span><i class="fa-solid fa-newspaper"></i> PulsoMX</span>
+                    <span><i class="fa-solid fa-clock"></i> 2 min de lectura</span>
+                </div>
+                <img id="image" alt="">
+
+                <div class="ad-article-native">
+                    <iframe sandbox="allow-scripts allow-popups allow-same-origin" width="100%" height="250" frameborder="0" scrolling="no" srcdoc="<html><body><script async='async' data-cfasync='false' src='https://alarmpenguinmelt.com/7378a712ef2e1acc90b8893efa12f6e6/invoke.js'></script><div id='container-7378a712ef2e1acc90b8893efa12f6e6'></div></body></html>"></iframe>
+                </div>
+
+                <div id="body"></div>
+
+                <div class="ad-article">
+                    <div class="ad-728">
+                        <iframe sandbox="allow-scripts allow-popups allow-same-origin" width="728" height="90" frameborder="0" scrolling="no" srcdoc="<html><body><script>atOptions = {'key':'7f7f7c1f4dcc288bb79ea8e84f8e3cfa','format':'iframe','height':90,'width':728,'params':{}};</script><script src='https://alarmpenguinmelt.com/7f7f7c1f4dcc288bb79ea8e84f8e3cfa/invoke.js'></script></body></html>"></iframe>
+                    </div>
+                    <div class="ad-320">
+                        <iframe sandbox="allow-scripts allow-popups allow-same-origin" width="320" height="50" frameborder="0" scrolling="no" srcdoc="<html><body><script>atOptions = {'key':'d4763e5f8fb679f246c0f6db1eebe973','format':'iframe','height':50,'width':320,'params':{}};</script><script src='https://alarmpenguinmelt.com/d4763e5f8fb679f246c0f6db1eebe973/invoke.js'></script></body></html>"></iframe>
+                    </div>
+                </div>
+
+                <div class="source-box">
+                    <i class="fa-solid fa-link" style="color:var(--rojo);margin-right:6px;"></i>
+                    Fuente original: <a id="source-link" href="#" target="_blank" rel="noopener noreferrer">Ver noticia completa</a>
+                </div>
+
+                <div class="share-box">
+                    <p><i class="fa-solid fa-share-nodes" style="color:var(--rojo);margin-right:6px;"></i>Compartir esta noticia</p>
+                    <div class="share-btns">
+                        <a id="share-wa" href="#" target="_blank" class="share-btn wa"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                        <a id="share-tw" href="#" target="_blank" class="share-btn tw"><i class="fa-brands fa-x-twitter"></i> Twitter</a>
+                        <a id="share-fb" href="#" target="_blank" class="share-btn fb"><i class="fa-brands fa-facebook"></i> Facebook</a>
+                    </div>
+                </div>
+            </article>
+
+            <p class="related-title">Noticias Relacionadas</p>
+            <div id="related-grid" class="related-grid"></div>
+        </main>
+
+        <aside class="sidebar">
+            <div class="sidebar-widget">
+                <p class="sidebar-title">Últimas Noticias</p>
+                <div id="sidebar-list"></div>
+            </div>
+            <div class="ad-sidebar">
+                <iframe sandbox="allow-scripts allow-popups allow-same-origin" width="320" height="50" frameborder="0" scrolling="no" srcdoc="<html><body><script>atOptions = {'key':'d4763e5f8fb679f246c0f6db1eebe973','format':'iframe','height':50,'width':320,'params':{}};</script><script src='https://alarmpenguinmelt.com/d4763e5f8fb679f246c0f6db1eebe973/invoke.js'></script></body></html>"></iframe>
+            </div>
+        </aside>
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">Inicio</a>
+            <a href="privacidad.html">Política de Privacidad</a>
+            <a href="terminos.html">Términos de Uso</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="acerca.html">Acerca de</a>
+        </div>
+        <p>© 2025 PulsoMX — Noticias de México actualizadas automáticamente.</p>
+    </footer>
+
+    <script>
+        const id = new URLSearchParams(window.location.search).get('id');
+        fetch("data/noticias.json")
+            .then(res => res.json())
+            .then(data => {
+                const item = data.find(n => String(n.id) === String(id));
+                if (!item) { document.getElementById('loader').innerHTML = '<p>La noticia no existe o fue eliminada.</p>'; return; }
+
+                document.title = `${item.titulo} | PulsoMX`;
+                document.getElementById('page-title').innerText = `${item.titulo} | PulsoMX`;
+                document.getElementById('breadcrumb-title').innerText = item.titulo.substring(0, 50) + '...';
+                document.getElementById('date').innerText = item.fecha;
+                document.getElementById('title').innerText = item.titulo;
+                document.getElementById('image').src = item.imagen;
+                document.getElementById('image').alt = item.titulo;
+
+                const cuerpo = item.contenido || item.resumen || item.titulo;
+                const textoCuerpo = limpiarHTML(cuerpo);
+                document.getElementById('body').innerHTML = textoCuerpo.split('\n').filter(p => p.trim()).map(p => `<p>${p}</p>`).join('');
+                document.getElementById('source-link').href = item.url_origen || '#';
+
+                const urlActual = encodeURIComponent(window.location.href);
+                const tituloEnc = encodeURIComponent(item.titulo);
+                document.getElementById('share-wa').href = `https://wa.me/?text=${tituloEnc}%20${urlActual}`;
+                document.getElementById('share-tw').href = `https://twitter.com/intent/tweet?text=${tituloEnc}&url=${urlActual}`;
+                document.getElementById('share-fb').href = `https://www.facebook.com/sharer/sharer.php?u=${urlActual}`;
+
+                document.getElementById('loader').style.display = 'none';
+                document.getElementById('article-wrapper').style.display = 'grid';
+
+                const relacionadas = data.filter(n => String(n.id) !== String(id)).slice(-4).reverse();
+                const relGrid = document.getElementById('related-grid');
+                relacionadas.forEach(n => {
+                    relGrid.innerHTML += `
+                        <a href="noticia.html?id=${n.id}" class="related-card">
+                            <img src="${n.imagen}" alt="${n.titulo}" loading="lazy">
+                            <div><h4>${n.titulo}</h4></div>
+                        </a>`;
+                });
+
+                const sidebar = document.getElementById('sidebar-list');
+                data.slice(-5).reverse().forEach(n => {
+                    sidebar.innerHTML += `
+                        <a href="noticia.html?id=${n.id}" class="sidebar-news-item">
+                            <img src="${n.imagen}" alt="${n.titulo}" loading="lazy">
+                            <div><span>${n.fecha}</span><h4>${n.titulo}</h4></div>
+                        </a>`;
+                });
+            })
+            .catch(() => { document.getElementById('loader').innerHTML = '<p>Error al cargar la noticia.</p>'; });
+
+        function limpiarHTML(html) {
+            const div = document.createElement('div');
+            div.innerHTML = html;
+            return div.textContent || div.innerText || html;
+        }
+    </script>
+    <iframe 
+        srcdoc="<!DOCTYPE html><html><head><style>body{margin:0;padding:0;overflow:hidden;}</style></head><body><script src='https://alarmpenguinmelt.com/dc/55/f1/dc55f1198cbf0bd4731db92aadc6b54f.js'></script></body></html>" 
+        sandbox="allow-scripts allow-popups allow-same-origin" 
+        style="position: fixed; bottom: 0; left: 0; width: 100%; height: 65px; border: none; z-index: 9999;" 
+        title="Social Bar Ad">
+    </iframe>
+</body>
+</html>
