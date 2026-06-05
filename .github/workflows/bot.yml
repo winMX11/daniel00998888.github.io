@@ -1,1 +1,39 @@
+name: Bot PulsoMX - MODO TURBO
 
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 */2 * * *'
+
+# 👇 ESTO ES LO QUE LE DA PERMISO AL BOT DE GUARDAR EL JSON
+permissions:
+  contents: write
+
+jobs:
+  actualizar_noticias:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v3
+
+      - name: Configurar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Instalar librerías
+        run: pip install requests beautifulsoup4 groq feedparser # Agrega las que uses
+
+      - name: Ejecutar script de Python
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          # FB_ACCESS_TOKEN: ${{ secrets.FB_ACCESS_TOKEN }} # Lo puedes dejar, el Python lo va a ignorar por ahora
+        run: python bot.py # Cambia main.py por el nombre real de tu script
+
+      - name: Guardar cambios en GitHub (Push)
+        run: |
+          git config --global user.name "Bot PulsoMX"
+          git config --global user.email "bot@pulsomx.com"
+          git add data/noticias.json
+          git commit -m "⚡ Carga masiva de noticias (Modo Turbo)" || exit 0
+          git push
